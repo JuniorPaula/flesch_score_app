@@ -2,7 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct {
+ size_t sentences;
+ size_t words;
+ size_t syllables;
+} TextStats;
+
 extern double flesch_score(const char* text, size_t len);
+
+extern TextStats get_text_stats(const char* text, size_t len);
 
 char* read_file(const char* path)
 {
@@ -38,6 +46,13 @@ int main(int argc, char** argv)
 
   printf("-- Lib sendo executada a partir da Implementação em C ---\n");
   printf("\nFlesch Score: %.2f\n", score);
+
+  TextStats stats = get_text_stats(text, strlen(text));
+
+  printf("\nEstatísticas: \n");
+  printf(" Palavras: %zu\n", stats.words);
+  printf(" Sentenças: %zu\n", stats.sentences);
+  printf(" Sílabas: %zu\n", stats.syllables);
 
   return 0;
 }
