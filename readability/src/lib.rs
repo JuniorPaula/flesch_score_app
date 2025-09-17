@@ -4,6 +4,23 @@ pub struct TextStats {
   pub syllables: usize,
 }
 
+/// # Safety
+///
+/// Esta função assume que `ptr` aponta para uma sequência válida de bytes UTF-8
+/// com o tamanho `len`. O ponteiro não pode ser nulo e a região de memória deve esta acessível.
+///
+/// Se esses condições não forem garantidas, o comportamento será indefinido.
+#[unsafe(no_mangle)]
+pub unsafe extern "C" fn flesch_score(ptr: *const u8, len: usize) -> f64 {
+  let slice = unsafe { std::slice::from_raw_parts(ptr, len)};
+  let text = match std::str::from_utf8(slice) {
+    Ok(s) => s,
+    Err(_) => return 0.0,
+  };
+
+  flesch_reading_ease(text)
+}
+
 pub fn flesch_reading_ease(text: &str) -> f64 {
   let stats = analize_text(text);
   if stats.sentences == 0 || stats.words == 0 {
@@ -14,9 +31,9 @@ pub fn flesch_reading_ease(text: &str) -> f64 {
   let spw = stats.syllables as f64 / stats.words as f64;
 
   248.835 - (1.015 * wps) - (84.6 * spw)
-} 
+}
 
-fn analize_text(text: &str) -> TextStats {
+pub fn analize_text(text: &str) -> TextStats {
   let sentences = count_sentences(text);
   let words = count_words(text);
   let syllables = count_syllables(text);
