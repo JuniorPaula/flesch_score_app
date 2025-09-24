@@ -54,5 +54,7 @@ int main(int argc, char** argv)
   printf(" Sentenças: %zu\n", stats.sentences);
   printf(" Sílabas: %zu\n", stats.syllables);
 
+  free(text);
+
   return 0;
 }
