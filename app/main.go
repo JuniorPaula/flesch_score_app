@@ -185,7 +185,6 @@ func main() {
 
 			textPreview.SetText(string(data))
 
-			// TODO: call func to get text score
 			score := calculateScore(string(data))
 			scoreLabel.SetText("Flesch Score: " + formatScore(score))
 
@@ -208,7 +207,27 @@ func main() {
 	})
 
 	// Botão de exportação de métricas
-	exportButton := widget.NewButtonWithIcon("Exportar Relatório", theme.DocumentSaveIcon(), func() {})
+	exportButton := widget.NewButtonWithIcon("Exportar Relatório", theme.DocumentSaveIcon(), func() {
+		report := generateReport(currentScore, currentLevel, currentStats)
+
+		dialog.NewFileSave(func(writer fyne.URIWriteCloser, err error) {
+			if err != nil {
+				dialog.ShowError(err, win)
+				return
+			}
+
+			if writer == nil {
+				return
+			}
+
+			_, err = writer.Write([]byte(report))
+			if err != nil {
+				dialog.ShowError(fmt.Errorf("ocorreu um erro ao salvar o arquivo"), win)
+			}
+			writer.Close()
+			dialog.ShowInformation("Sucesso", "Relatório salvo com sucesso!", win)
+		}, win).Show()
+	})
 
 	// Top com botão
 	top := container.NewBorder(nil, nil, nil, exportButton, selectFileButton)
@@ -236,4 +255,16 @@ func main() {
 	win.SetContent(layout)
 	win.Resize(fyne.NewSize(1024, 680))
 	win.ShowAndRun()
+}
+
+func generateReport(score float64, level string, stats Stats) string {
+	return fmt.Sprintf(`Relatório de Legibilidade
+Flesch Score: %.2f
+Classificação: %s
+
+Estatísticas:
+- Sentenças: %d
+- Palavras: %d
+- Sílabas: %d
+	`, score, level, stats.Sentences, stats.Words, stats.Syllables)
 }
