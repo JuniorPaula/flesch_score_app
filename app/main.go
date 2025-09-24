@@ -17,14 +17,6 @@ import (
 
 var legend *fyne.Container
 
-func calculateScore(text string) float64 {
-	return 0.0
-}
-
-func classifyScore(score float64) (string, color.Color) {
-	return "Foo", color.White
-}
-
 type Stats struct {
 	Sentences int
 	Words     int
@@ -36,6 +28,14 @@ var (
 	currentLevel string
 	currentStats Stats
 )
+
+func calculateScore(text string) float64 {
+	return 0.0
+}
+
+func classifyScore(score float64) (string, color.Color) {
+	return "Foo", color.White
+}
 
 func getStats(text string) Stats {
 	return Stats{
@@ -49,6 +49,14 @@ func generateInsight(level string) string {
 	return "Muito bom"
 }
 
+var (
+	DARKGREEN  = color.RGBA{R: 0x00, G: 0xcc, B: 0x00, A: 0xff}
+	LIGHTGREEN = color.RGBA{R: 0x66, G: 0xff, B: 0x66, A: 0xff}
+	YELLOW     = color.RGBA{R: 0xff, G: 0xd7, B: 0x00, A: 0xff}
+	ORANGE     = color.RGBA{R: 0xff, G: 0xa5, B: 0x00, A: 0xff}
+	RED        = color.RGBA{R: 0xff, G: 0x45, B: 0x00, A: 0xff}
+)
+
 func makeLegend(level string) *fyne.Container {
 	type legendItem struct {
 		label string
@@ -56,11 +64,11 @@ func makeLegend(level string) *fyne.Container {
 	}
 
 	levels := []legendItem{
-		{"Muito fácil", color.RGBA{R: 0x00, G: 0xcc, B: 0x00, A: 0xff}},
-		{"Fácil", color.RGBA{R: 0x66, G: 0xff, B: 0x66, A: 0xff}},
-		{"Média", color.RGBA{R: 0xff, G: 0xd7, B: 0x00, A: 0xff}},
-		{"Difícil", color.RGBA{R: 0xff, G: 0xa5, B: 0x00, A: 0xff}},
-		{"Muito difícil", color.RGBA{R: 0xff, G: 0x45, B: 0x00, A: 0xff}},
+		{"Muito fácil", DARKGREEN},
+		{"Fácil", LIGHTGREEN},
+		{"Média", YELLOW},
+		{"Difícil", ORANGE},
+		{"Muito difícil", RED},
 	}
 
 	var items []fyne.CanvasObject
