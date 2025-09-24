@@ -1,10 +1,29 @@
 package main
 
+/*
+#cgo LDFLAGS: -L../readability/target/release -lreadability
+#include <stdlib.h>
+
+// Função da lib Rust para calcular o flesch score
+extern double flesch_score(const char* text, size_t len);
+
+// Função da lib Rust para calcular as métricas
+typedef struct {
+ size_t sentences;
+ size_t words;
+ size_t syllables;
+} TextStats;
+
+extern TextStats get_text_stats(const char* text, size_t len);
+*/
+import "C"
+
 import (
 	"fmt"
 	"image/color"
 	"os"
 	"strings"
+	"unsafe"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -30,14 +49,22 @@ var (
 )
 
 func calculateScore(text string) float64 {
-	return 65.0
+	cstr := C.CString(text)
+	defer C.free(unsafe.Pointer(cstr))
+
+	return float64(C.flesch_score(cstr, C.size_t(len(text))))
 }
 
 func getStats(text string) Stats {
+	cstr := C.CString(text)
+	defer C.free(unsafe.Pointer(cstr))
+
+	s := C.get_text_stats(cstr, C.size_t(len(text)))
+
 	return Stats{
-		Sentences: 2,
-		Words:     4,
-		Syllables: 6,
+		Sentences: int(s.sentences),
+		Words:     int(s.words),
+		Syllables: int(s.syllables),
 	}
 }
 
