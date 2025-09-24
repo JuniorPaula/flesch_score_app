@@ -30,11 +30,7 @@ var (
 )
 
 func calculateScore(text string) float64 {
-	return 0.0
-}
-
-func classifyScore(score float64) (string, color.Color) {
-	return "Foo", color.White
+	return 65.0
 }
 
 func getStats(text string) Stats {
@@ -45,8 +41,36 @@ func getStats(text string) Stats {
 	}
 }
 
+func classifyScore(score float64) (string, color.Color) {
+	switch {
+	case score >= 90:
+		return "Muito fácil (crianças/ensino fundamental)", DARKGREEN
+	case score >= 75:
+		return "Fácil (leitura rápida)", LIGHTGREEN
+	case score >= 50:
+		return "Média (adequado ao público geral)", YELLOW
+	case score >= 25:
+		return "Difícil (text técnico)", ORANGE
+	default:
+		return "Muito difícil (especialistas ou acadêmicos)", RED
+	}
+}
+
 func generateInsight(level string) string {
-	return "Muito bom"
+	switch {
+	case strings.Contains(level, "Muito fácil"):
+		return "Texto extremamente acessível. Ideal para crianças ou leitores com baixa escolaridade."
+	case strings.Contains(level, "Fácil"):
+		return "Texto leve e bem compreensível. Perfeito para blogs, newletters e conteúdos amplos."
+	case strings.Contains(level, "Média"):
+		return "Texto com legibilidade moderada. Adequado para o público geral com leitura fluente."
+	case strings.Contains(level, "Difícil"):
+		return "Texto denso. Pode exigir maior atenção ou conhecimento prévio do leitor."
+	case strings.Contains(level, "Muito dificil"):
+		return "Texto técnico ou acadêmico. Recomendado para especialistas ou leitores avançados."
+	default:
+		return ""
+	}
 }
 
 var (
