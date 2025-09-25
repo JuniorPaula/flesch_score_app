@@ -89,4 +89,5 @@ Insight: Texto denso. Pode exigir maior atenção ou conhecimento prévio do lei
 ## Licença
 
 [Portifolio - Junior Paula](https://juniorpaula.com.br)
+
 MIT © 2025 - Junior Paula
