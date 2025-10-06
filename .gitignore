@@ -2,3 +2,5 @@ readability/target/
 cli/app
 /data
 app/app
+/text_embedder/src/*.o
+/text_embedder/main
