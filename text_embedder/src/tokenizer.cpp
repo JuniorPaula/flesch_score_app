@@ -1,6 +1,5 @@
-#include <iostream>
-#include <vector>
 #include <utf8proc.h>
+#include "../include/tokenizer.hpp"
 
 std::string normalize(const std::string& input)
 {
@@ -58,18 +57,4 @@ std::vector<std::string> tokenizer(const std::string& text)
   }
 
   return tokens;
-}
-
-int main()
-{
-  std::string input = "Olá mundo! este é o teste para a função tokenizer.";
-
-  auto tokens = tokenizer(input);
-
-  std::cout << "Tokens:\n";
-  for (const auto& t : tokens) {
-    std::cout << " - " << t << std::endl;
-  }
-  
-  return 0;
 }
