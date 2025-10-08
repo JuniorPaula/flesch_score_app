@@ -4,13 +4,12 @@
 
 int main()
 {
-  std::vector<LabeledDoc> corpus = {
-    {"cientifico", "A estrutura do  DNA foi analizada...", {}, {}},
-    {"publicitario", "Você não vai acreditar nessa oferta!", {}, {}},
-    {"publicitario", "Só hoje um preco imperdível!", {}, {}},
-    {"publicitario", "Queima de estoque! Venha conferir", {}, {}},
-    {"infantil", "Era uma vez um coelho branco.", {}, {}}
-  };
+  std::string filename = "corpus/corpus_test.json";
+  std::vector<LabeledDoc> corpus = load_corpus_from_json(filename);
+
+  if (corpus.empty()) {
+    std::cerr << "Error: Corpus empty or not be loaded!" << std::endl;
+  }
 
   for (auto& doc : corpus) {
     doc.tokens = tokenizer(doc.text);
@@ -26,7 +25,7 @@ int main()
     doc.vector = vectorize(doc.tokens, vocab, idf);
   }
 
-  std::string input = "hoje o gerente enlouqueceu, a oferta está imperdivel!";
+  std::string input = "O dna nunca mente";
   auto similar = get_most_similar(input, corpus, vocab, idf);
 
   std::cout << "Analized text: " << input << "\n";

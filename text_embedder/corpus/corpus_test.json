@@ -1,0 +1,22 @@
+[
+  {
+    "label": "cientifico",
+    "text": "A estrutura do  DNA foi analizada..."
+  },
+  {
+    "label": "publicitario",
+    "text":  "Você não vai acreditar nessa oferta!"
+  },
+  { 
+    "label": "publicitario",
+    "text": " Só hoje um preco imperdível!"
+  },
+  {
+   "label": "publicitario",
+   "text":  "Queima de estoque! Venha conferir"
+  },
+  {
+   "label":   "infantil",
+   "text":    "Era uma vez um coelho branco."
+  }
+]

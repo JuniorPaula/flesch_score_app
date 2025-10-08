@@ -26,4 +26,6 @@ LabeledDoc get_most_similar(const std::string& input,
                             const Vocab vocab,
                             const std::unordered_map<std::string, float>& idf);
 
+std::vector<LabeledDoc> load_corpus_from_json(std::string& filename);
+
 #endif // TFIDF_HPP

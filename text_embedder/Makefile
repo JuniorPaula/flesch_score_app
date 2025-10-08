@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Iinclude -Wall -std=c++17
+CXXFLAGS = -Iinclude -Wall -std=c++17 -fPIC
 LDFLAGS = -lutf8proc
 
 # sources

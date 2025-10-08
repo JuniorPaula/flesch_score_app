@@ -2,8 +2,10 @@
 #include <unordered_map>
 #include <cmath>
 #include <iostream>
+#include <fstream>
 #include "../include/tfidf.hpp"
 #include "../include/tokenizer.hpp"
+#include "../include/json/json.hpp"
 
 Vocab build_vocab(const std::vector<std::vector<std::string>>& docs) {
   std::unordered_set<std::string> set;
@@ -118,4 +120,26 @@ LabeledDoc get_most_similar(const std::string& input,
     }
   }
   return result;
+}
+
+std::vector<LabeledDoc> load_corpus_from_json(std::string& filename) {
+  std::vector<LabeledDoc> corpus;
+  std::ifstream in(filename);
+  if (!in.is_open()) {
+    std::cerr << "Error on load corpus from file: " << filename << std::endl;
+    return corpus;
+  }
+
+  nlohmann::json_abi_v3_12_0::json j;
+  in >> j;
+
+  for (const auto& item : j) {
+    LabeledDoc d;
+    d.label = item["label"];
+    d.text = item["text"];
+    d.tokens = tokenizer(d.text);
+    corpus.push_back(std::move(d));
+  }
+
+  return corpus;
 }
