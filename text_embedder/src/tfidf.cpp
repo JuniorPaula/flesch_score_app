@@ -53,3 +53,37 @@ std::unordered_map<std::string, float> computerTF(const std::vector<std::string>
 
   return tf;
 }
+
+std::vector<float> vectorize(const std::vector<std::string>& tokens,
+                            const Vocab& vocab,
+                            const std::unordered_map<std::string, float>& idf) {
+
+  auto tf = computerTF(tokens);
+  std::vector<float> vec;
+  vec.reserve(vocab.size());                              
+
+  for (const auto& term : vocab) {
+    float w_tf = tf.count(term) ? tf[term] : 0.0f;
+    float w_idf = idf.count(term) ? idf.at(term) : 0.0f;
+    vec.push_back(w_tf * w_idf);
+  }
+  return vec;
+}
+
+static inline float dot(const std::vector<float>& a, const std::vector<float>& b) {
+  float s = 0.0f;
+  size_t n = std::min(a.size(), b.size());
+
+  for (size_t i = 0; i < n; ++i) {
+    s += a[i] * b[i];
+  }
+  return s;
+}
+
+static inline float norm(const std::vector<float>& a) {
+  return std::sqrt(dot(a, a)) + 1e-8f; // evitar div/0
+}
+
+float cosine(const std::vector<float>& a, const std::vector<float>& b) {
+  return dot(a, b) / (norm(a) * norm(b));
+}

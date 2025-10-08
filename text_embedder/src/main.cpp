@@ -29,10 +29,14 @@ int main()
 
   std::cout << "----------------\n";
 
-  auto tf = computerTF(tok1);
-  for (auto [k, v] : tf) {
-    std::cout << " Key -> " << k << "\t | frequency -> " << v << std::endl;
-  }
+
+  auto v1 = vectorize(tok1, vocab, idf);
+  // auto v2 = vectorize(tok2, vocab, idf);
+  auto v3 = vectorize(tok3, vocab, idf);
+
+  float sim = cosine(v1, v3);
+
+  std::cout << "Similarity tok1 and tok3: " << sim << std::endl;
   
   return 0;
 }
