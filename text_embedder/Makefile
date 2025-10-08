@@ -3,7 +3,7 @@ CXXFLAGS = -Iinclude -Wall -std=c++17
 LDFLAGS = -lutf8proc
 
 # sources
-SRC_CPP = src/tokenizer.cpp
+SRC_CPP = src/tokenizer.cpp src/tfidf.cpp
 SRC_MAIN = src/main.cpp
 
 OBJ_CPP = $(SRC_CPP:.cpp=.o)

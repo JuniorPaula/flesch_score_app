@@ -1,14 +1,19 @@
 #include <iostream>
 #include "../include/tokenizer.hpp"
+#include "../include/tfidf.hpp"
 
 int main()
 {
-  std::string input = "Olá mundo! este é o teste para a função tokenizer.";
+  std::string t1 = "O carro está na garagem.";
+  std::string t2 = "O automóvel está na garagem.";
 
-  auto tokens = tokenizer(input);
+  auto tok1 = tokenizer(t1);
+  auto tok2 = tokenizer(t2);
 
-  std::cout << "Tokens:\n";
-  for (const auto& t : tokens) {
+  std::vector<std::vector<std::string>> docs = { tok1, tok2 };
+  auto vocab = build_vocab(docs);
+
+  for (const auto& t : vocab) {
     std::cout << " - " << t << std::endl;
   }
   
