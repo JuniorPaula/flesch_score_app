@@ -4,41 +4,33 @@
 
 int main()
 {
-  std::string t1 = "O carro está na garagem.";
-  std::string t2 = "O automóvel está na garagem.";
-  std::string t3 = "A comida esta na mesa";
+  std::vector<LabeledDoc> corpus = {
+    {"cientifico", "A estrutura do  DNA foi analizada...", {}, {}},
+    {"publicitario", "Você não vai acreditar nessa oferta!", {}, {}},
+    {"publicitario", "Só hoje um preco imperdível!", {}, {}},
+    {"publicitario", "Queima de estoque! Venha conferir", {}, {}},
+    {"infantil", "Era uma vez um coelho branco.", {}, {}}
+  };
 
-  auto tok1 = tokenizer(t1);
-  auto tok2 = tokenizer(t2);
-  auto tok3 = tokenizer(t3);
-
-  std::vector<std::vector<std::string>> docs = { tok1, tok2, tok3 };
-  auto vocab = build_vocab(docs);
-
-  for (const auto& t : vocab) {
-    std::cout << " - " << t << std::endl;
+  for (auto& doc : corpus) {
+    doc.tokens = tokenizer(doc.text);
   }
 
-  std::cout << "----------------\n";
+  std::vector<std::vector<std::string>> all_tokens;
+  for (auto& d : corpus) all_tokens.push_back(d.tokens);
 
-  auto idf = computerIDF(docs);
+  Vocab vocab = build_vocab(all_tokens);
+  auto idf = computerIDF(all_tokens);
 
-  for (auto [k, v] : idf) {
-    std::cout << " Key -> " << k << "\t | frequency -> " << v << std::endl;
+  for (auto& doc : corpus) {
+    doc.vector = vectorize(doc.tokens, vocab, idf);
   }
 
-  std::cout << "----------------\n";
+  std::string input = "hoje o gerente enlouqueceu, a oferta está imperdivel!";
+  auto similar = get_most_similar(input, corpus, vocab, idf);
 
-  auto v1 = vectorize(tok1, vocab, idf);
-  auto v2 = vectorize(tok2, vocab, idf);
-  // auto v3 = vectorize(tok3, vocab, idf);
-
-  print_vector(v1, vocab);
-  print_vector(v2, vocab);
-
-  float sim = cosine(v1, v2);
-
-  std::cout << "Similarity tok1 and tok2: " << sim << std::endl;
+  std::cout << "Analized text: " << input << "\n";
+  std::cout << "Most similar: " << similar.label << "\n";
   
   return 0;
 }

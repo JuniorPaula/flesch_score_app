@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include "../include/tfidf.hpp"
+#include "../include/tokenizer.hpp"
 
 Vocab build_vocab(const std::vector<std::vector<std::string>>& docs) {
   std::unordered_set<std::string> set;
@@ -94,4 +95,27 @@ void print_vector(const std::vector<float>& vec, const Vocab& vocab) {
   for (size_t i = 0; i < vec.size(); ++i) {
     std::cout << " - " << vocab[i] << ": " << vec[i] << std::endl;
   }
+}
+
+LabeledDoc get_most_similar(const std::string& input,
+                            const std::vector<LabeledDoc>& corpus,
+                            const Vocab vocab,
+                            const std::unordered_map<std::string, float>& idf) {
+                              
+  LabeledDoc result;
+  result.label = "";
+  result.text = "";
+  float best = -1.0f;
+
+  auto tokens = tokenizer(input);
+  auto vec = vectorize(tokens, vocab, idf);
+
+  for (const auto& doc : corpus) {
+    float sim = cosine(vec, doc.vector);
+    if (sim > best) {
+      best = sim;
+      result = doc;
+    }
+  }
+  return result;
 }
