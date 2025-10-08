@@ -26,6 +26,13 @@ int main()
   for (auto [k, v] : idf) {
     std::cout << " Key -> " << k << "\t | frequency -> " << v << std::endl;
   }
+
+  std::cout << "----------------\n";
+
+  auto tf = computerTF(tok1);
+  for (auto [k, v] : tf) {
+    std::cout << " Key -> " << k << "\t | frequency -> " << v << std::endl;
+  }
   
   return 0;
 }

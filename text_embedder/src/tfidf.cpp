@@ -36,3 +36,20 @@ std::unordered_map<std::string, float> computerIDF(const std::vector<std::vector
 
   return idf;
 }
+
+std::unordered_map<std::string, float> computerTF(const std::vector<std::string>& tokens) {
+  std::unordered_map<std::string, float> tf;
+  if (tokens.empty()) return tf;
+
+  for (const auto& t : tokens) {
+    tf[t] += 1.0f;
+  }
+
+  float N = static_cast<float>(tokens.size());
+
+  for (auto& [ k, v ] : tf) {
+    v /= N; // frequência relativa
+  }
+
+  return tf;
+}
