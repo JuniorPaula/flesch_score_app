@@ -1,6 +1,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <cmath>
+#include <iostream>
 #include "../include/tfidf.hpp"
 
 Vocab build_vocab(const std::vector<std::vector<std::string>>& docs) {
@@ -86,4 +87,11 @@ static inline float norm(const std::vector<float>& a) {
 
 float cosine(const std::vector<float>& a, const std::vector<float>& b) {
   return dot(a, b) / (norm(a) * norm(b));
+}
+
+void print_vector(const std::vector<float>& vec, const Vocab& vocab) {
+  std::cout << "\nTF-IDF Vector:\n";
+  for (size_t i = 0; i < vec.size(); ++i) {
+    std::cout << " - " << vocab[i] << ": " << vec[i] << std::endl;
+  }
 }

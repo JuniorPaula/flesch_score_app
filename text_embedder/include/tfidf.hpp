@@ -13,5 +13,6 @@ std::vector<float> vectorize(const std::vector<std::string>& tokens,
                             const Vocab& vocab,
                             const std::unordered_map<std::string, float>& ifd);
 float cosine(const std::vector<float>& a, const std::vector<float>& b);
+void print_vector(const std::vector<float>& vec, const Vocab& vocab);
 
 #endif // TFIDF_HPP

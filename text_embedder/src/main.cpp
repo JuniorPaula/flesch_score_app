@@ -29,14 +29,16 @@ int main()
 
   std::cout << "----------------\n";
 
-
   auto v1 = vectorize(tok1, vocab, idf);
-  // auto v2 = vectorize(tok2, vocab, idf);
-  auto v3 = vectorize(tok3, vocab, idf);
+  auto v2 = vectorize(tok2, vocab, idf);
+  // auto v3 = vectorize(tok3, vocab, idf);
 
-  float sim = cosine(v1, v3);
+  print_vector(v1, vocab);
+  print_vector(v2, vocab);
 
-  std::cout << "Similarity tok1 and tok3: " << sim << std::endl;
+  float sim = cosine(v1, v2);
+
+  std::cout << "Similarity tok1 and tok2: " << sim << std::endl;
   
   return 0;
 }
