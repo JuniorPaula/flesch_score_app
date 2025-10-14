@@ -1,22 +1,614 @@
 [
   {
     "label": "cientifico",
-    "text": "A estrutura do  DNA foi analizada..."
+    "text": "A estrutura do DNA foi analisada através de técnicas de cristalografia de raios-X, revelando a conformação helicoidal dupla das bases nitrogenadas."
+  },
+  {
+    "label": "cientifico", 
+    "text": "A fotossíntese é o processo pelo qual as plantas convertem luz em energia química através da clorofila presente nos cloroplastos."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os neurônios transmitem impulsos elétricos através de sinapses, liberando neurotransmissores que modulam a atividade cerebral."
+  },
+  {
+    "label": "cientifico",
+    "text": "A teoria da relatividade geral de Einstein descreve a gravidade como uma curvatura no espaço-tempo causada pela massa e energia."
+  },
+  {
+    "label": "cientifico",
+    "text": "A mitose é um processo de divisão celular que resulta em duas células filhas geneticamente idênticas à célula parental."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os ribossomos são organelas responsáveis pela síntese proteica, traduzindo a informação genética do RNA mensageiro."
+  },
+  {
+    "label": "cientifico",
+    "text": "A seleção natural atua sobre variações genéticas, favorecendo indivíduos com características adaptativas ao ambiente."
+  },
+  {
+    "label": "cientifico",
+    "text": "As enzimas catalisam reações bioquímicas específicas através da redução da energia de ativação necessária para o processo."
+  },
+  {
+    "label": "cientifico",
+    "text": "A termodinâmica estuda as transformações de energia, estabelecendo leis fundamentais sobre conservação e entropia."
+  },
+  {
+    "label": "cientifico",
+    "text": "A mecânica quântica descreve o comportamento de partículas subatômicas através de funções de onda probabilísticas."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os anticorpos são proteínas do sistema imunológico que reconhecem e neutralizam antígenos específicos."
+  },
+  {
+    "label": "cientifico",
+    "text": "A transcripção genética é o processo de síntese de RNA a partir de uma sequência de DNA molde."
+  },
+  {
+    "label": "cientifico",
+    "text": "As ligações covalentes compartilham pares de elétrons entre átomos, formando moléculas estáveis."
+  },
+  {
+    "label": "cientifico",
+    "text": "O método científico baseia-se na observação, formulação de hipóteses e experimentação controlada."
+  },
+  {
+    "label": "cientifico",
+    "text": "A osmose é o movimento de água através de membranas semipermeáveis seguindo gradientes de concentração."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os cromossomos homólogos separam-se durante a meiose I, reduzindo pela metade o número de cromossomos."
+  },
+  {
+    "label": "cientifico",
+    "text": "A espectroscopia analisa a interação entre radiação eletromagnética e matéria para identificar compostos."
+  },
+  {
+    "label": "cientifico",
+    "text": "A homeostase mantém condições internas constantes através de mecanismos de feedback negativo."
+  },
+  {
+    "label": "cientifico",
+    "text": "As reações de oxidação-redução envolvem transferência de elétrons entre espécies químicas diferentes."
+  },
+  {
+    "label": "cientifico",
+    "text": "A biodiversidade representa a variedade de formas de vida em diferentes níveis de organização biológica."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os polímeros são macromoléculas formadas pela repetição de unidades monoméricas através de ligações covalentes."
+  },
+  {
+    "label": "cientifico",
+    "text": "A deriva genética causa mudanças aleatórias nas frequências alélicas de populações pequenas ao longo do tempo."
+  },
+  {
+    "label": "cientifico",
+    "text": "A cromatografia separa componentes de misturas baseando-se em diferentes afinidades por fases móveis e estacionárias."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os isótopos são átomos do mesmo elemento com diferentes números de nêutrons no núcleo atômico."
+  },
+  {
+    "label": "cientifico",
+    "text": "A cadeia respiratória produz ATP através do transporte de elétrons e fosforilação oxidativa nas mitocôndrias."
+  },
+  {
+    "label": "cientifico",
+    "text": "A cinética enzimática estuda a velocidade das reações catalisadas por enzimas em diferentes condições."
+  },
+  {
+    "label": "cientifico",
+    "text": "O DNA recombinante permite a inserção de genes de uma espécie em organismos de espécies diferentes."
+  },
+  {
+    "label": "cientifico",
+    "text": "A lei de Hardy-Weinberg descreve as condições sob as quais as frequências alélicas permanecem constantes."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os catalisadores aceleram reações químicas sem serem consumidos no processo reacional global."
+  },
+  {
+    "label": "cientifico",
+    "text": "A eletroforese separa macromoléculas baseando-se em sua migração através de campos elétricos aplicados."
+  },
+  {
+    "label": "cientifico",
+    "text": "As mutações pontuais podem alterar a sequência de aminoácidos e a funcionalidade das proteínas resultantes."
+  },
+  {
+    "label": "cientifico",
+    "text": "A pressão osmótica determina o movimento de solventes através de membranas seletivamente permeáveis."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os receptores celulares reconhecem moléculas sinalizadoras específicas e desencadeiam cascatas de transdução."
+  },
+  {
+    "label": "cientifico",
+    "text": "A taxonomia classifica organismos em categorias hierárquicas baseadas em características morfológicas e genéticas."
+  },
+  {
+    "label": "cientifico",
+    "text": "A entropia mede o grau de desordem de um sistema termodinâmico em determinadas condições."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os marcadores moleculares permitem identificar variações genéticas entre indivíduos e populações."
+  },
+  {
+    "label": "cientifico",
+    "text": "A hibridização molecular detecta sequências complementares de ácidos nucleicos através de sondas específicas."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os cofatores são moléculas não-proteicas essenciais para a atividade catalítica de muitas enzimas."
+  },
+  {
+    "label": "cientifico",
+    "text": "A especiação ocorre quando populações se tornam reprodutivamente isoladas e divergem geneticamente."
+  },
+  {
+    "label": "cientifico",
+    "text": "A microscopia eletrônica utiliza feixes de elétrons para obter imagens de alta resolução de estruturas celulares."
+  },
+  {
+    "label": "cientifico",
+    "text": "As proteínas chaperonas assistem o dobramento correto de outras proteínas durante a síntese."
+  },
+  {
+    "label": "cientifico",
+    "text": "A PCR amplifica exponencialmente sequências específicas de DNA através de ciclos repetitivos de temperatura."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os gradientes eletroquímicos armazenam energia potencial utilizada para o transporte ativo de moléculas."
+  },
+  {
+    "label": "cientifico",
+    "text": "A filogenia reconstrói relações evolutivas entre espécies baseando-se em dados morfológicos e moleculares."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os complexos enzimáticos coordenam múltiplas reações bioquímicas em vias metabólicas integradas."
+  },
+  {
+    "label": "cientifico",
+    "text": "A imunofluorescência localiza antígenos específicos em células através de anticorpos conjugados com fluoróforos."
+  },
+  {
+    "label": "cientifico",
+    "text": "As pontes de hidrogênio estabilizam estruturas secundárias e terciárias de proteínas e ácidos nucleicos."
+  },
+  {
+    "label": "cientifico",
+    "text": "A citogenética estuda a estrutura e comportamento dos cromossomos durante divisões celulares."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os fatores de transcrição regulam a expressão gênica ligando-se a sequências promotoras específicas."
+  },
+  {
+    "label": "cientifico",
+    "text": "A calorimetria mede mudanças de entalpia durante transformações físicas e reações químicas."
+  },
+  {
+    "label": "cientifico",
+    "text": "Os plasmídeos são elementos genéticos extracromossômicos utilizados como vetores em biotecnologia."
   },
   {
     "label": "publicitario",
-    "text":  "Você não vai acreditar nessa oferta!"
+    "text": "Você não vai acreditar nessa oferta imperdível! Apenas hoje com 70% de desconto!"
   },
-  { 
+  {
     "label": "publicitario",
-    "text": " Só hoje um preco imperdível!"
+    "text": "Só hoje um preço imperdível! Corra antes que acabe!"
   },
   {
-   "label": "publicitario",
-   "text":  "Queima de estoque! Venha conferir"
+    "label": "publicitario",
+    "text": "Queima de estoque! Venha conferir os melhores preços da cidade!"
   },
   {
-   "label":   "infantil",
-   "text":    "Era uma vez um coelho branco."
+    "label": "publicitario",
+    "text": "MEGA PROMOÇÃO! Leve 3 e pague apenas 1! Oferta por tempo limitado!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Black Friday chegou! Descontos de até 80% em toda loja!"
+  },
+  {
+    "label": "publicitario",
+    "text": "LIQUIDAÇÃO TOTAL! Tudo deve sair! Preços nunca vistos!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Última chance! Apenas 24 horas para aproveitar essa oferta exclusiva!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER DESCONTO! Compre agora e ganhe frete grátis para todo Brasil!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oferta relâmpago! 50% OFF em todos os produtos! Válido até meia-noite!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Não perca essa oportunidade única! Produtos com preços de fábrica!"
+  },
+  {
+    "label": "publicitario",
+    "text": "IMPERDÍVEL! Leve o dobro pelo mesmo preço! Promoção válida hoje!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Aproveite já! Desconto progressivo: quanto mais compra, mais economiza!"
+  },
+  {
+    "label": "publicitario",
+    "text": "OFERTA ESPECIAL! Compre um produto e leve outro grátis!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Preços arrasadores! Venha conferir as melhores ofertas do ano!"
+  },
+  {
+    "label": "publicitario",
+    "text": "FESTA DE ANIVERSÁRIO! 15 anos de loja com descontos incríveis!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Corre que está acabando! Últimas peças com desconto de 60%!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER OFERTA! Parcelamos em até 12x sem juros no cartão!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oportunidade única! Produtos importados com preços nacionais!"
+  },
+  {
+    "label": "publicitario",
+    "text": "PROMOÇÃO RELÂMPAGO! Descontos de 40% a 70% em categorias selecionadas!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Garanta já o seu! Estoque limitado com preços promocionais!"
+  },
+  {
+    "label": "publicitario",
+    "text": "MEGA SALDÃO! Aproveite os menores preços do mercado!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oferta imperdível! Qualidade premium com preço popular!"
+  },
+  {
+    "label": "publicitario",
+    "text": "ÚLTIMA SEMANA! Descontos especiais antes do Natal!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Compre hoje e receba amanhã! Entrega expressa grátis!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER ECONOMIA! Kit completo com 50% de desconto!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Não deixe para depois! Oferta válida somente enquanto durarem os estoques!"
+  },
+  {
+    "label": "publicitario",
+    "text": "GRANDE LIQUIDAÇÃO! Marcas famosas com preços populares!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Aproveite agora! Cupom de desconto exclusivo para novos clientes!"
+  },
+  {
+    "label": "publicitario",
+    "text": "OFERTA BOMBÁSTICA! Produtos em 10x sem juros!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Corra! Apenas 48 horas para aproveitar essa super promoção!"
+  },
+  {
+    "label": "publicitario",
+    "text": "DESCONTO PROGRESSIVO! Quanto mais você compra, menos você paga!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oferta exclusiva! Cadastre-se e ganhe 20% de desconto na primeira compra!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER COMBO! Produtos complementares com desconto especial!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Preço de custo! Vendemos com margem zero nesta promoção!"
+  },
+  {
+    "label": "publicitario",
+    "text": "FLASH SALE! 2 horas apenas com descontos incríveis!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Aproveite já! Cashback de 15% em todas as compras!"
+  },
+  {
+    "label": "publicitario",
+    "text": "OFERTA ÚNICA! Produtos premium com preços de outlet!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Não perca tempo! Estoque voando com esses preços!"
+  },
+  {
+    "label": "publicitario",
+    "text": "MEGA DESCONTO! Aproveite antes que os concorrentes copiem!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oferta especial! Troque seu produto usado e ganhe desconto!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER PROMOÇÃO! Frete grátis para compras acima de R$ 99!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Corre! Oferta válida apenas para os 100 primeiros clientes!"
+  },
+  {
+    "label": "publicitario",
+    "text": "DESCONTO TOTAL! Preços que cabem no seu bolso!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Aproveite! Produtos com defeito de fábrica, descontos de até 90%!"
+  },
+  {
+    "label": "publicitario",
+    "text": "OFERTA RELÂMPAGO! Compre pelo WhatsApp e ganhe desconto extra!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Não acredita? Venha conferir pessoalmente esses preços!"
+  },
+  {
+    "label": "publicitario",
+    "text": "SUPER ECONOMIA! Produtos de marca com preço de genérico!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Oferta imperdível! Renovação de estoque com preços especiais!"
+  },
+  {
+    "label": "publicitario",
+    "text": "ÚLTIMA CHANCE! Promoção encerra à meia-noite!"
+  },
+  {
+    "label": "publicitario",
+    "text": "Aproveite agora! Preços promocionais até acabar o estoque!"
+  },
+  {
+    "label": "publicitario",
+    "text": "MEGA OFERTA! Produtos novos com preços de segunda mão!"
+  },
+  {
+    "label": "infantil",
+    "text": "Era uma vez um coelho branco que adorava cenouras."
+  },
+  {
+    "label": "infantil",
+    "text": "O sapo cururu vivia na beira do rio cantando feliz."
+  },
+  {
+    "label": "infantil",
+    "text": "A princesa estava presa na torre mais alta do castelo esperando seu príncipe."
+  },
+  {
+    "label": "infantil",
+    "text": "O patinho feio descobriu que era um lindo cisne branco."
+  },
+  {
+    "label": "infantil",
+    "text": "Chapeuzinho Vermelho levava doces para a vovozinha na floresta."
+  },
+  {
+    "label": "infantil",
+    "text": "Os três porquinhos construíram casas para se proteger do lobo mau."
+  },
+  {
+    "label": "infantil",
+    "text": "Cinderela perdeu seu sapatinho de cristal na escadaria do palácio."
+  },
+  {
+    "label": "infantil",
+    "text": "O gato de botas ajudava seu dono a conquistar a princesa."
+  },
+  {
+    "label": "infantil",
+    "text": "A Bela Adormecida dormiu por cem anos até o beijo do príncipe."
+  },
+  {
+    "label": "infantil",
+    "text": "João e Maria se perderam na floresta e encontraram uma casa de doces."
+  },
+  {
+    "label": "infantil",
+    "text": "Branca de Neve morava com os sete anões na floresta encantada."
+  },
+  {
+    "label": "infantil",
+    "text": "Rapunzel tinha cabelos longos que chegavam até o chão da torre."
+  },
+  {
+    "label": "infantil",
+    "text": "O soldadinho de chumbo se apaixonou pela bailarina de papel."
+  },
+  {
+    "label": "infantil",
+    "text": "A pequena sereia queria ter pernas para andar na terra."
+  },
+  {
+    "label": "infantil",
+    "text": "Pinóquio mentia tanto que seu nariz crescia cada vez mais."
+  },
+  {
+    "label": "infantil",
+    "text": "A galinha dos ovos de ouro botava um ovo dourado por dia."
+  },
+  {
+    "label": "infantil",
+    "text": "O urso dorminhoco hibernava durante todo o inverno."
+  },
+  {
+    "label": "infantil",
+    "text": "A borboleta colorida voava de flor em flor no jardim."
+  },
+  {
+    "label": "infantil",
+    "text": "O elefantinho perdido procurava sua mamãe na savana."
+  },
+  {
+    "label": "infantil",
+    "text": "A tartaruga e a lebre fizeram uma corrida na floresta."
+  },
+  {
+    "label": "infantil",
+    "text": "O passarinho azul cantava melodias bonitas todas as manhãs."
+  },
+  {
+    "label": "infantil",
+    "text": "A formiguinha trabalhadora juntava comida para o inverno."
+  },
+  {
+    "label": "infantil",
+    "text": "O ratinho corajoso salvou o leão da rede do caçador."
+  },
+  {
+    "label": "infantil",
+    "text": "A vaquinha Mimosa dava leite fresco todos os dias."
+  },
+  {
+    "label": "infantil",
+    "text": "O cavalinho de pau galopava pelos sonhos das crianças."
+  },
+  {
+    "label": "infantil",
+    "text": "A estrela cadente realizava os desejos das crianças bonzinhas."
+  },
+  {
+    "label": "infantil",
+    "text": "O peixinho dourado nadava alegre no aquário colorido."
+  },
+  {
+    "label": "infantil",
+    "text": "A corujinha sábia ensinava lições importantes aos bichinhos."
+  },
+  {
+    "label": "infantil",
+    "text": "O cachorrinho fiel acompanhava seu dono em todas as aventuras."
+  },
+  {
+    "label": "infantil",
+    "text": "A fada madrinha aparecia quando as crianças mais precisavam."
+  },
+  {
+    "label": "infantil",
+    "text": "O dragão bondoso protegia o tesouro dos piratas malvados."
+  },
+  {
+    "label": "infantil",
+    "text": "A lua sorridente iluminava o caminho dos viajantes perdidos."
+  },
+  {
+    "label": "infantil",
+    "text": "O sol dourado aquecia a terra e fazia as plantas crescerem."
+  },
+  {
+    "label": "infantil",
+    "text": "A nuvenzinha branca levava a chuva para os jardins sedentos."
+  },
+  {
+    "label": "infantil",
+    "text": "O arco-íris colorido aparecia depois da tempestade passar."
+  },
+  {
+    "label": "infantil",
+    "text": "A abelinha trabalhadora fazia mel dourado nas colmeias."
+  },
+  {
+    "label": "infantil",
+    "text": "O gatinho travesso brincava com novelos de lã coloridos."
+  },
+  {
+    "label": "infantil",
+    "text": "A florzinha delicada desabrochou com os primeiros raios de sol."
+  },
+  {
+    "label": "infantil",
+    "text": "O vagalume acendia sua luz para guiar os bichos no escuro."
+  },
+  {
+    "label": "infantil",
+    "text": "A joaninha vermelha pousou na ponta do nariz do menino."
+  },
+  {
+    "label": "infantil",
+    "text": "O caracolzinho carregava sua casinha nas costas por onde ia."
+  },
+  {
+    "label": "infantil",
+    "text": "A andorinha voava para países quentes quando chegava o frio."
+  },
+  {
+    "label": "infantil",
+    "text": "O hamster fofo guardava sementes em suas bochechas gordinhas."
+  },
+  {
+    "label": "infantil",
+    "text": "A girafa alta alcançava as folhas mais verdinhas da árvore."
+  },
+  {
+    "label": "infantil",
+    "text": "O pinguim engraçado deslizava no gelo com sua barriga."
+  },
+  {
+    "label": "infantil",
+    "text": "A baleia gigante cantava canções no fundo do oceano azul."
+  },
+  {
+    "label": "infantil",
+    "text": "O coelhinho da Páscoa escondeu ovinhos coloridos no jardim."
+  },
+  {
+    "label": "infantil",
+    "text": "A foquinha brincalhona batia palminhas na praia gelada."
+  },
+  {
+    "label": "infantil",
+    "text": "O hipopótamo gorducho tomava banho no rio todos os dias."
+  },
+  {
+    "label": "infantil",
+    "text": "A zebra listrada galopava livre pela savana africana."
+  },
+  {
+    "label": "infantil",
+    "text": "O macaquinho esperto balançava nos galhos das árvores."
   }
 ]

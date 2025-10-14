@@ -25,7 +25,7 @@ int main()
     doc.vector = vectorize(doc.tokens, vocab, idf);
   }
 
-  std::string input = "O dna nunca mente";
+  std::string input = "Dia 14 de outubro haverá uma queima de estoque total.";
   auto similar = get_most_similar(input, corpus, vocab, idf);
 
   std::cout << "Analized text: " << input << "\n";
