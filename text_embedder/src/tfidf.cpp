@@ -3,9 +3,9 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
+#include <nlohmann/json.hpp>
 #include "../include/tfidf.hpp"
 #include "../include/tokenizer.hpp"
-#include "../include/json/json.hpp"
 
 Vocab build_vocab(const std::vector<std::vector<std::string>>& docs) {
   std::unordered_set<std::string> set;
@@ -130,7 +130,7 @@ std::vector<LabeledDoc> load_corpus_from_json(std::string& filename) {
     return corpus;
   }
 
-  nlohmann::json_abi_v3_12_0::json j;
+  nlohmann::json_abi_v3_11_3::json j;
   in >> j;
 
   for (const auto& item : j) {
