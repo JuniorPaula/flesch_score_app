@@ -2,7 +2,11 @@ package main
 
 /*
 #cgo LDFLAGS: -L../readability/target/release -lreadability
+#cgo LDFLAGS: -L../text_embedder -ltext_embedder -lutf8proc
+#cgo CFLAGS: -I../text_embedder/include
+
 #include <stdlib.h>
+#include "../text_embedder/include/text_embedder.h"
 
 // Função da lib Rust para calcular o flesch score
 extern double flesch_score(const char* text, size_t len);
@@ -48,6 +52,26 @@ var (
 	currentStats Stats
 )
 
+// C++ Func
+func InitTextEmbedder(corpusPath string) {
+	cPath := C.CString(corpusPath)
+	defer C.free(unsafe.Pointer(cPath))
+	C.init_text_embedder(cPath)
+}
+
+// C++ Func - Modelo de treinado semânticamente
+func generateInsight(text string) string {
+	cText := C.CString(text)
+	defer C.free(unsafe.Pointer(cText))
+
+	cResult := C.generate_insight(cText)
+	defer C.free(unsafe.Pointer(cResult))
+
+	rawLabel := C.GoString(cResult)
+	return mapInsightLabelToText(rawLabel)
+}
+
+// Rust Func
 func calculateScore(text string) float64 {
 	cstr := C.CString(text)
 	defer C.free(unsafe.Pointer(cstr))
@@ -55,6 +79,7 @@ func calculateScore(text string) float64 {
 	return float64(C.flesch_score(cstr, C.size_t(len(text))))
 }
 
+// Rust Func
 func getStats(text string) Stats {
 	cstr := C.CString(text)
 	defer C.free(unsafe.Pointer(cstr))
@@ -83,17 +108,34 @@ func classifyScore(score float64) (string, color.Color) {
 	}
 }
 
-func generateInsight(level string) string {
-	switch {
-	case strings.Contains(level, "Muito fácil"):
+// func generateInsight(level string) string {
+// 	switch {
+// 	case strings.Contains(level, "Muito fácil"):
+// 		return "Texto extremamente acessível. Ideal para crianças ou leitores com baixa escolaridade."
+// 	case strings.Contains(level, "Fácil"):
+// 		return "Texto leve e bem compreensível. Perfeito para blogs, newletters e conteúdos amplos."
+// 	case strings.Contains(level, "Média"):
+// 		return "Texto com legibilidade moderada. Adequado para o público geral com leitura fluente."
+// 	case strings.Contains(level, "Difícil"):
+// 		return "Texto denso. Pode exigir maior atenção ou conhecimento prévio do leitor."
+// 	case strings.Contains(level, "Muito dificil"):
+// 		return "Texto técnico ou acadêmico. Recomendado para especialistas ou leitores avançados."
+// 	default:
+// 		return ""
+// 	}
+// }
+
+func mapInsightLabelToText(label string) string {
+	switch label {
+	case "muito_facil":
 		return "Texto extremamente acessível. Ideal para crianças ou leitores com baixa escolaridade."
-	case strings.Contains(level, "Fácil"):
+	case "facil":
 		return "Texto leve e bem compreensível. Perfeito para blogs, newletters e conteúdos amplos."
-	case strings.Contains(level, "Média"):
+	case "media":
 		return "Texto com legibilidade moderada. Adequado para o público geral com leitura fluente."
-	case strings.Contains(level, "Difícil"):
+	case "dificil":
 		return "Texto denso. Pode exigir maior atenção ou conhecimento prévio do leitor."
-	case strings.Contains(level, "Muito dificil"):
+	case "muito_dificil":
 		return "Texto técnico ou acadêmico. Recomendado para especialistas ou leitores avançados."
 	default:
 		return ""
@@ -141,6 +183,11 @@ func makeLegend(level string) *fyne.Container {
 
 func formatScore(score float64) string {
 	return fmt.Sprintf("%.2f", score)
+}
+
+func init() {
+	corpusPath := "./dataset/insight_corpus.json"
+	InitTextEmbedder(corpusPath)
 }
 
 func main() {
@@ -199,8 +246,8 @@ func main() {
 			currentScore = score
 			currentLevel = level
 
-			insight := generateInsight(level)
-			insightLabel.SetText(" Insight: " + insight)
+			insight := generateInsight(string(data))
+			insightLabel.SetText("💡 Insight: " + insight)
 
 			legend.Objects = makeLegend(level).Objects
 		}, win).Show()
